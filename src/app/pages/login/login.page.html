@@ -1,0 +1,54 @@
+<ion-header>
+	<ion-toolbar color="primary">
+		  <ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		  </ion-buttons>
+		  <ion-title class="centre">Login</ion-title>
+	</ion-toolbar>
+  </ion-header>
+<ion-content id="main-content" class="ion-no-padding color" dir="ltr">
+  <div id="sign-in-button"></div>
+
+  <div class="main">
+    <ion-card no-margin>
+      <ion-card-content>
+      
+        <ion-grid class="phoneAuthGrid">
+      <ion-row class="row">
+        <ion-label color="primary">Nom</ion-label>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="nom"></ion-input>
+        </ion-item>
+      </ion-row>
+      <br>
+      <ion-row class="row">
+        <ion-label  color="primary">Prenom</ion-label>
+        <ion-item>
+          <ion-input type="text"  [(ngModel)]="prenom"></ion-input>
+        </ion-item>
+      </ion-row>
+          <ion-row class="row">
+            <ion-col size="4">
+              <ion-select class="phoneCountry"  okText="Okay" cancelText="Dismiss"
+             (ionChange)="countryCodeChange($event)" >
+                <ion-select-option  *ngFor="let country of CountryJson" value={{country.dial_code}}>
+                  {{country.dial_code}}</ion-select-option>
+                </ion-select>
+            </ion-col>
+            <ion-col size="8">
+              <ion-input clearInput type="test" placeholder="Your Contact Number" [(ngModel)]="PhoneNo"
+                class="input ion-padding-horizontal" clear-input="true"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button expand="block" (click)="signinWithPhoneNumber($event)" color="undefined"
+                class="btn-transition">
+                Sign in with Phone number</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-card-content>
+    </ion-card>
+  </div>

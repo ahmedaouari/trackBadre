@@ -1,0 +1,7 @@
+{
+  "name": "omarTrack",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
